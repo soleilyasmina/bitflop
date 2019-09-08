@@ -10,13 +10,13 @@ import mastertailsflip from '../assets/mastertails.gif';
 
 const Coin = (props) => {
   const [flip, setFlip] = React.useState(false);
-  const [heads, setHeads] = React.useState(false);
+  const { heads, flipCoin, master } = props;
 
   const controlFlip = () => {
     setFlip(true);
     setTimeout(() => {
       setFlip(false);
-      setHeads(!heads);
+      flipCoin(); 
     }, 630);
   }
 
@@ -27,13 +27,13 @@ const Coin = (props) => {
       alt="coin"
       className="coin"
       onClick={() => controlFlip()}
-      src={`${props.master ? heads ? masterheadsflip : mastertailsflip : heads ? headsflip : tailsflip}`}
+      src={`${master ? heads ? masterheadsflip : mastertailsflip : heads ? headsflip : tailsflip}`}
     /> :
     <img
       alt="coin"
       className="coin"
       onClick={() => controlFlip()}
-      src={`${props.master ? heads ? masterheads : mastertails : heads ? headscoin : tailscoin}`}
+      src={`${master ? heads ? masterheads : mastertails : heads ? headscoin : tailscoin}`}
     /> 
     }
     </>
