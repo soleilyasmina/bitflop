@@ -3,10 +3,10 @@ import Coin from './Coin.js';
 
 const Pool = (props) => {
   const [master, setMaster] = useState(false);
-  const [pool, setPool] = useState([true, true, false]);
+  const { pool, poolIndex, setPool } = props;
 
   const flipCoin = (index) => {
-    setPool(pool.map((coin, i) => i === index ? !coin : coin));
+    setPool(poolIndex, pool.map((coin, i) => i === index ? !coin : coin));
     setMaster(!master);
   }
 
