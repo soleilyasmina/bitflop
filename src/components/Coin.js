@@ -3,8 +3,10 @@ import headscoin from '../assets/heads.png';
 import tailscoin from '../assets/tails.png';
 import headsflip from '../assets/heads.gif';
 import tailsflip from '../assets/tails.gif';
-import master from '../assets/masterheads.png';
-import masterflip from '../assets/master.gif';
+import masterheads from '../assets/masterheads.png';
+import mastertails from '../assets/mastertails.png';
+import masterheadsflip from '../assets/masterheads.gif';
+import mastertailsflip from '../assets/mastertails.gif';
 
 const Coin = (props) => {
   const [flip, setFlip] = React.useState(false);
@@ -25,13 +27,13 @@ const Coin = (props) => {
       alt="coin"
       className="coin"
       onClick={() => controlFlip()}
-      src={`${props.master ? masterflip : heads ? headsflip : tailsflip}`}
+      src={`${props.master ? heads ? masterheadsflip : mastertailsflip : heads ? headsflip : tailsflip}`}
     /> :
     <img
       alt="coin"
       className="coin"
       onClick={() => controlFlip()}
-      src={`${props.master ? master : heads ? headscoin : tailscoin}`}
+      src={`${props.master ? heads ? masterheads : mastertails : heads ? headscoin : tailscoin}`}
     /> 
     }
     </>
