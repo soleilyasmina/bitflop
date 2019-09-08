@@ -13,13 +13,14 @@ const Pool = (props) => {
   return (
     <div className="pool">
       <div className="master-container">
-      <Coin master={true} flipCoin={() => setMaster(!true)} heads={master} />
+        <Coin master={true} flipCoin={flipCoin} heads={master} />
       </div>
       <div className="pool-container">
         { pool.map((coin, i) => (
           <Coin
             heads={coin}
-            flipCoin={() => flipCoin(i)}
+            flipCoin={flipCoin}
+            index={i}
             master={false}
           />
         )) }
