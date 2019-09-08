@@ -1,12 +1,11 @@
 import React from 'react';
-import Coin from './components/Coin';
+import Pool from './components/Pool';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Coin master={true}/>
-      <Coin master={false}/>
+      <Pool />
     </div>
   );
 }
