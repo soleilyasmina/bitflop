@@ -21,7 +21,6 @@ const Coin = (props) => {
     }, 1000);
   }
 
-
   useEffect(() => {
     controlFlip(heads); 
   }, [heads]);
@@ -32,13 +31,13 @@ const Coin = (props) => {
     <img
       alt="coin"
       className="coin"
-      onClick={() => flipCoin(index)}
+      onClick={() => master ? null : flipCoin(index)}
       src={`${master ? display ? masterheadsflip : mastertailsflip : display ? headsflip : tailsflip}`}
     /> :
     <img
       alt="coin"
       className="coin"
-      onClick={() => flipCoin(index)}
+      onClick={() => master ? null : flipCoin(index)}
       src={`${master ? display ? masterheads : mastertails : display ? headscoin : tailscoin}`}
     /> 
     }
