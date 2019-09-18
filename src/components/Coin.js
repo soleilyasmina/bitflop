@@ -31,13 +31,13 @@ const Coin = (props) => {
     <img
       alt="coin"
       className="coin"
-      onClick={() => master ? null : flipCoin(index)}
+      onClick={() => master && ( heads === display ) ? null : flipCoin(index)}
       src={`${master ? display ? masterheadsflip : mastertailsflip : display ? headsflip : tailsflip}`}
     /> :
     <img
       alt="coin"
       className="coin"
-      onClick={() => master ? null : flipCoin(index)}
+      onClick={() => master && ( heads === display ) ? null : flipCoin(index)}
       src={`${master ? display ? masterheads : mastertails : display ? headscoin : tailscoin}`}
     /> 
     }

@@ -14,10 +14,13 @@ function App() {
   };
 
   return (
-    <div className="App">
-      { pools.map((pool, index) => {
-        return <Pool pool={pool} poolIndex={index} setPool={setPool}/>
-      }) }
+    <div className="brain">
+      <h1 className="header">BITFLOP</h1>
+      <div className="App">
+        { pools.map((pool, index) => {
+          return <Pool pool={pool} poolIndex={index} setPool={setPool}/>
+        }) }
+      </div>
     </div>
   );
 }

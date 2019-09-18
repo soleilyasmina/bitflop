@@ -1,11 +1,46 @@
+@font-face {
+  font-family: TechFont;
+  src: url(./assets/GohuFont Nerd Font Complete.ttf);
+}
+
+.brain {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  color: white;
+  font-family: TechFont;
+  font-size: 65px;
+  margin: 0px auto;
+  animation: glowtext 1.5s ease-in-out infinite alternate;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
 .coin {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
 }
 
 .pool {
   display: flex;
   flex-direction: column;
+  margin: 20px;
+}
+
+.electric {
+  width: 240px;
+  margin: 0 auto;
+}
+
+.electric img {
+  width: 235px;
+  height: 170px;
 }
 
 .master-container {
@@ -14,4 +49,19 @@
 
 .pool-container {
   margin: 0 auto; 
+}
+
+@media (max-width: 900px) {
+  .App {
+    flex-direction: column;
+  }
+}
+
+@keyframes glowtext {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #C62EF6, 0 0 40px #C62EF6;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #C62EF6, 0 0 30px #C62EF6;
+  }
 }
