@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Pool from './components/Pool';
+import Swap from './components/Swap';
 import './App.css';
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     [true, false, true],
     [true, true, true]
   ]);
+  const [swap, setSwap] = useState(false);
 
   const setPool = (index, newPool) => {
     setPools(pools.map((pool, i) => i === index ? newPool : pool ));
@@ -21,6 +23,9 @@ function App() {
           return <Pool pool={pool} poolIndex={index} setPool={setPool}/>
         }) }
       </div>
+      <Swap 
+        click={() => setSwap(!swap)}
+        swap={swap}/>
     </div>
   );
 }

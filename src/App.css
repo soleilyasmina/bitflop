@@ -51,6 +51,12 @@
   margin: 0 auto; 
 }
 
+.swap {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
 @media (max-width: 900px) {
   .App {
     flex-direction: column;
