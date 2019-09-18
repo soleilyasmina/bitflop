@@ -65,9 +65,9 @@
 
 @keyframes glowtext {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #C62EF6, 0 0 40px #C62EF6;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 25px rgba(172, 224, 249, 0), 0 0 30px rgba(172, 224, 249, 1);
   }
   to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #C62EF6, 0 0 30px #C62EF6;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 25px rgba(172, 224, 249, 1), 0 0 30px rgba(172, 224, 249, 1);
   }
 }

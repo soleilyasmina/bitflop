@@ -9,8 +9,8 @@ import masterheadsflip from '../assets/masterheadsonce.gif';
 import mastertailsflip from '../assets/mastertailsonce.gif';
 
 const Coin = (props) => {
-  const [flip, setFlip] = React.useState(false);
   const { heads, flipCoin, index, master } = props;
+  const [flip, setFlip] = React.useState(false);
   const [display, setDisplay] = React.useState(heads);
 
   const controlFlip = (newHeads) => {
@@ -22,25 +22,43 @@ const Coin = (props) => {
   }
 
   useEffect(() => {
-    controlFlip(heads); 
+    controlFlip(heads);
   }, [heads]);
+
+  const imageSource = () => {
+    return flip ?
+      master ?
+        display ?
+          masterheadsflip :
+          mastertailsflip :
+        display ?
+          headsflip : 
+          tailsflip :
+      master ? 
+        display ? 
+          masterheads : 
+          mastertails : 
+        display ? 
+          headscoin : 
+          tailscoin;
+  }
 
   return (
     <>
-    { flip ?
-    <img
-      alt="coin"
-      className="coin"
-      onClick={() => master && ( heads === display ) ? null : flipCoin(index)}
-      src={`${master ? display ? masterheadsflip : mastertailsflip : display ? headsflip : tailsflip}`}
-    /> :
-    <img
-      alt="coin"
-      className="coin"
-      onClick={() => master && ( heads === display ) ? null : flipCoin(index)}
-      src={`${master ? display ? masterheads : mastertails : display ? headscoin : tailscoin}`}
-    /> 
-    }
+      { flip ?
+      <img
+        alt="coin"
+        className="coin"
+        onClick={() => master && ( heads === display ) ? null : flipCoin(index)}
+        src={imageSource()}
+      /> :
+      <img
+        alt="coin"
+        className="coin"
+        onClick={() => master && ( heads === display ) ? null : flipCoin(index)}
+        src={imageSource()}
+      />
+      }
     </>
   )
 };

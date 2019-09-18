@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
   min-width: 100vw;
-  background-image: url('./assets/background-loop.gif');
+  background-image: linear-gradient(to top, rgba(255, 241, 235, 0.2) 0%, rgba(172, 224, 249, 0.2) 100%), url('./assets/background-loop.gif');
 }
 
 code {

@@ -13,7 +13,9 @@ const Pool = (props) => {
   const flipCoin = (index) => {
     setPool(poolIndex, pool.map((coin, i) => i === index ? !coin : coin));
     setCurrent(index);
-    setMaster(!master);
+    if ((props.swap && pool[index]) || !props.swap) {
+      setMaster(!master);
+    }
   }
 
   const electric = () => {
@@ -44,7 +46,9 @@ const Pool = (props) => {
             heads={coin}
             flipCoin={flipCoin}
             index={i}
+            poolIndex={props.poolIndex}
             master={false}
+            swap={props.swap}
           />
         )) }
       </div>
