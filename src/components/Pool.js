@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Coin from './Coin.js';
 import electric0 from '../assets/electric-3-0.gif';
 import electric1 from '../assets/electric-3-1.gif';
@@ -7,16 +7,25 @@ import electricdefault from '../assets/electric.gif';
 
 const Pool = (props) => {
   const [master, setMaster] = useState(false);
-  const { pool, poolIndex, setPool } = props;
   const [current, setCurrent] = useState(null);
+  const { pool, poolIndex, setPool, swap, trySwap, masterSwap } = props;
 
   const flipCoin = (index) => {
-    setPool(poolIndex, pool.map((coin, i) => i === index ? !coin : coin));
-    setCurrent(index);
-    if ((props.swap && pool[index]) || !props.swap) {
+    if (swap) {
+      trySwap(poolIndex, index); 
+    }
+    else {
+      setPool(poolIndex, pool.map((coin, i) => i === index ? !coin : coin));
+      setCurrent(index);
       setMaster(!master);
     }
   }
+
+  useEffect(() => {
+    if (masterSwap === poolIndex) {
+      setMaster(!master);
+    }
+  }, [masterSwap])
 
   const electric = () => {
     switch(current) {
